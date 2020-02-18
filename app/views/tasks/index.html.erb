@@ -1,16 +1,19 @@
 <div class="container mt-3">
 
-  <h1>My tasks</h1>
+  <h1 class="mb-3">My tasks</h1>
+
   <% @tasks.each do |task| %>
     <div>
       <input type="checkbox" id=<% task.title %> name= <% task.title %>
       <% if task.completed %> checked> <% end %>
 
-      <label for=<% task.title %>> <%= link_to task.title, task_path(task) %> </label>
+      <label class="mb-0" for=<% task.title %>> <%= link_to task.title, task_path(task) %> </label>
     </div>
-
-
   <% end %>
+
+  <div class="mt-3">
+    <%= link_to("+ Create a new task", tasks_new_path) %>
+  </div>
 
 </div>
 

@@ -8,6 +8,7 @@
   <% if @task.completed == false %><p>This task is not completed yet</p><% end  %>
   <% if @task.completed %><p>This task is completed!</p><% end  %>
 
-  <%= link_to("Back to list", tasks_path) %>
+  <p><%= link_to("✐ Edit this task", edit_task_path) %></p>
+  <p><%= link_to("☞ Back to list", tasks_path) %></p>
 
 </div>
