@@ -7,7 +7,9 @@
       <input type="checkbox" id=<% task.title %> name= <% task.title %>
       <% if task.completed %> checked> <% end %>
 
-      <label class="mb-0" for=<% task.title %>> <%= link_to task.title, task_path(task) %> | <%= link_to '✗ Delete', task_path(task), method: :delete %>
+      <label class="mb-0" for=<% task.title %>>
+        <%= link_to task.title, task_path(task) %> |
+        <%= link_to '✗ Delete', task_path(task), method: :delete, data: { confirm: "Are you sure?" }  %>
 </label>
     </div>
   <% end %>
